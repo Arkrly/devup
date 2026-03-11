@@ -4,16 +4,33 @@
   "description": "Universal dev server + Cloudflare tunnel launcher",
   "main": "index.js",
   "bin": {
-    "devup": "./bin/devup.js"
+    "devup": "bin/devup.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint bin/",
     "lint:fix": "eslint bin/ --fix"
   },
-  "keywords": ["dev", "server", "cloudflare", "tunnel", "localhost"],
-  "author": "",
+  "keywords": [
+    "dev",
+    "server",
+    "cloudflare",
+    "tunnel",
+    "localhost"
+  ],
+  "author": "Aryan Kumar <aryankjsr@gmail.com> (https://arkrly.pages.dev)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkrly/devup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arkrly/devup/issues"
+  },
+  "homepage": "https://github.com/arkrly/devup#readme",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "cloudflared": "^0.7.0",
     "chalk": "^4.1.2",

@@ -1,0 +1,10 @@
+.eslintrc.json
+.gitignore
+.env
+*.log
+node_modules/
+.github/
+test/
+tests/
+*.test.js
+*.spec.js
