@@ -1,10 +1,10 @@
 {
-  "name": "devup",
+  "name": "tunnelup",
   "version": "1.0.0",
   "description": "Universal dev server + Cloudflare tunnel launcher",
   "main": "index.js",
   "bin": {
-    "devup": "bin/devup.js"
+    "tunnelup": "bin/tunnelup.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,12 +22,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arkrly/devup.git"
+    "url": "git+https://github.com/arkrly/tunnelup.git"
   },
   "bugs": {
-    "url": "https://github.com/arkrly/devup/issues"
+    "url": "https://github.com/arkrly/tunnelup/issues"
   },
-  "homepage": "https://github.com/arkrly/devup#readme",
+  "homepage": "https://github.com/arkrly/tunnelup#readme",
   "engines": {
     "node": ">=18"
   },

@@ -1,7 +1,7 @@
 <!-- prettier-ignore -->
 <div align="center">
 
-# devup
+# tunnelup
 
 *Universal dev server + Cloudflare tunnel launcher*
 
@@ -11,7 +11,7 @@
 
 </div>
 
-`devup` automatically detects your project type, starts your development server, and creates a Cloudflare tunnel to expose it to the internet. Perfect for sharing local development builds with teammates or testing webhooks.
+`tunnelup` automatically detects your project type, starts your development server, and creates a Cloudflare tunnel to expose it to the internet. Perfect for sharing local development builds with teammates or testing webhooks.
 
 ## Features
 
@@ -24,7 +24,7 @@
 ## Installation
 
 ```bash
-npm install -g devup
+npm install -g tunnelup
 ```
 
 You also need to install `cloudflared`:
@@ -44,31 +44,31 @@ yay -S cloudflared
 
 ```bash
 # Just run in your project directory
-devup
+tunnelup
 
 # Or initialize a config file first
-devup init
+tunnelup init
 ```
 
 ## Usage
 
 ```bash
 # Start dev server with tunnel (auto-detect project type)
-devup
+tunnelup
 
 # Override port
-devup -p 8080
+tunnelup -p 8080
 
 # Override dev command
-devup -c "npm run dev"
+tunnelup -c "npm run dev"
 
 # Initialize configuration file
-devup init
+tunnelup init
 ```
 
 ## Configuration
 
-Create a `devup.config.json` in your project root:
+Create a `tunnelup.config.json` in your project root:
 
 ```json
 {
@@ -101,7 +101,7 @@ Create a `devup.config.json` in your project root:
 
 ## Supported Frameworks
 
-`devup` automatically detects and configures these frameworks:
+`tunnelup` automatically detects and configures these frameworks:
 
 | Framework | Detected By | Default Command |
 |-----------|-------------|-----------------|
@@ -132,4 +132,4 @@ Create a `devup.config.json` in your project root:
 - cloudflared (installed and authenticated with `cloudflared tunnel login`)
 
 > [!NOTE]
-> If you're not authenticated with Cloudflare, run `cloudflared tunnel login` before using `devup`.
+> If you're not authenticated with Cloudflare, run `cloudflared tunnel login` before using `tunnelup`.

@@ -31,12 +31,12 @@ process.on('uncaughtException', (error) => {
 const program = new Command();
 
 program
-  .name('devup')
+  .name('tunnelup')
   .description('Universal dev server + Cloudflare tunnel launcher')
   .version('1.0.0')
   .option('-p, --port <port>', 'Override port (single service)')
   .option('-c, --cmd <command>', 'Override dev command')
-  .argument('[init]', 'Initialize devup.config.json for current project')
+  .argument('[init]', 'Initialize tunnelup.config.json for current project')
   .parse(process.argv);
 
 const opts = program.opts();
@@ -51,7 +51,7 @@ function log(message) {
 }
 
 function printHeader() {
-  logger.info('🚀 devup — universal dev tunnel');
+  logger.info('🚀 tunnelup — universal dev tunnel');
 }
 
 function printDetected(type, cmd) {
@@ -117,7 +117,7 @@ async function readConfigFile(filePath) {
 }
 
 async function parseJsonConfig() {
-  const configPath = path.join(process.cwd(), 'devup.config.json');
+  const configPath = path.join(process.cwd(), 'tunnelup.config.json');
   try {
     const content = await fs.promises.readFile(configPath, 'utf-8');
     return JSON.parse(content);
@@ -136,7 +136,7 @@ async function parseJsonConfig() {
 async function detectProjectType() {
   const cwd = process.cwd();
   
-  if (fs.existsSync(path.join(cwd, 'devup.config.json'))) {
+  if (fs.existsSync(path.join(cwd, 'tunnelup.config.json'))) {
     return null;
   }
   
@@ -537,7 +537,7 @@ async function startService(config) {
 
 async function initConfig() {
   const cwd = process.cwd();
-  const configPath = path.join(cwd, 'devup.config.json');
+  const configPath = path.join(cwd, 'tunnelup.config.json');
   
   const projectInfo = await detectProjectType();
   const port = await detectPortFromConfig();
@@ -546,7 +546,7 @@ async function initConfig() {
   const defaultCmd = projectInfo?.cmd || 'npm run dev';
   const defaultName = projectInfo?.type ? projectInfo.type.toLowerCase().replace(/[^a-z0-9]/g, '-') : 'app';
   
-  logger.info('Setting up devup config');
+  logger.info('Setting up tunnelup config');
   
   const answers = await inquirer.prompt([
     {
@@ -640,7 +640,7 @@ async function initConfig() {
   
   await fs.promises.writeFile(configPath, JSON.stringify(config, null, 2));
   logger.info({ configPath }, 'Created config file');
-  logger.info('Run "devup" to start your services.');
+  logger.info('Run "tunnelup" to start your services.');
 }
 
 async function main() {
